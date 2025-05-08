@@ -13,7 +13,7 @@ def analyze_fast_log(file_path, attack_start_str, attack_end_str):
     try:
         with open(file_path, "r") as f:
             for line in f:
-                # پیدا کردن تایم‌استمپ با میلی‌ثانیه
+                # timestamp
                 match = re.search(r"(\d{2}/\d{2}/\d{4}-\d{2}:\d{2}:\d{2}\.\d+)", line)
                 if match:
                     timestamp_str_full = match.group(1)
@@ -29,7 +29,7 @@ def analyze_fast_log(file_path, attack_start_str, attack_end_str):
                 else:
                     results.append(("⛔ Parse Error", line.strip()))
 
-        # محاسبه درصدها
+        # percentage
         if total_parsed > 0:
             tp_rate = (tp_count / total_parsed) * 100
             fp_rate = (fp_count / total_parsed) * 100
@@ -49,7 +49,7 @@ def analyze_fast_log(file_path, attack_start_str, attack_end_str):
     except Exception as e:
         print(f"⚠️ Error in execution {e}")
 
-# مثال از اجرا:
+# execution:
 file_path = r"C:\Users\MT\Desktop\ids-zeek-pcap\py\fast-A.log"  # مثلاً: "C:/logs/fast.log"
 attack_start = "05/07/2025-14:23:33"
 attack_end = "05/07/2025-14:24:08"
