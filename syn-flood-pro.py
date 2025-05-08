@@ -4,7 +4,7 @@ import random
 import time
 
 # target
-target_ip = "192.168.159.129"  # آدرس ماشین قربانی خودت رو بذار
+target_ip = "192.168.159.129"  
 
 # port
 target_port = 80
